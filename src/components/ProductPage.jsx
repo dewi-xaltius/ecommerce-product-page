@@ -1,5 +1,5 @@
-import React from 'react';
 import '../App.css'; // Importing CSS for styling
+import React, { useState } from 'react'; // Import useState hook
 
 // Product data (This will eventually come from an API)
 const product = {
@@ -24,13 +24,31 @@ function ProductImage({ imageUrl, title }) {
   );
 }
 
-// Component for displaying product title, description, and price
+// Component for displaying product title, description, and price with toggle
 function ProductInfo({ product }) {
+  // State to manage whether the description is expanded or not
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Define a short version of the description for initial display
+  const shortDescription = product.description.substring(0, 150) + '...';
+  // Check if the description is long enough to require a toggle
+  const needsToggle = product.description.length > 150;
+
   return (
     <div>
       <h1 className="product-title">{product.title}</h1>
       <p className="product-description">
-        {product.description}
+        {/* Conditionally render full or short description */}
+        {isExpanded || !needsToggle ? product.description : shortDescription}
+        {/* Render toggle button only if description is long */}
+        {needsToggle && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="read-more-toggle-button"
+          >
+            {isExpanded ? 'Read Less' : 'Read More'}
+          </button>
+        )}
       </p>
       <div className="price-stock-container">
         <span className="product-price">
@@ -46,7 +64,7 @@ function ProductInfo({ product }) {
   );
 }
 
-// Main ProductPage component
+// Main ProductPage component (rest of this file is unchanged)
 function ProductPage() {
   return (
     <div className="product-page-container">
