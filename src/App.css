@@ -43,7 +43,7 @@
   max-height: 384px; /* Maximum height on smaller screens */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .product-image {
     max-height: 100%;
   }
@@ -154,3 +154,4 @@
 .read-more-toggle-button:hover {
   color: #1d4ed8; /* Darker blue on hover */
 }
+
