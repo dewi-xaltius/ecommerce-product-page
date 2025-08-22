@@ -4,7 +4,8 @@
 .product-page-container {
   background-color: #ffffff; /* White background for the product card */
   border-radius: 8px; /* Rounded corners for the card */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
   overflow: hidden; /* Ensures child elements respect rounded corners */
   max-width: 960px; /* Maximum width for the product card on larger screens */
   width: 100%; /* Occupy full width up to max-width */
@@ -65,6 +66,17 @@
   margin-bottom: 16px; /* Space below */
 }
 
+.product-title-card {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Styles for the product description */
 .product-description {
   color: #374151; /* Medium gray */
@@ -123,7 +135,8 @@
   transition-property: background-color; /* Smooth transition for hover effect */
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Button shadow */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Button shadow */
   border: none; /* Remove default button border */
   cursor: pointer; /* Indicate clickable element */
 }
@@ -141,7 +154,6 @@
   color: #eb25a9; /* change to pink color */
 
   
-
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
@@ -152,5 +164,7 @@
 }
 
 .read-more-toggle-button:hover {
+
   color: #1d4ed8; /* Darker blue on hover */
+
 }
