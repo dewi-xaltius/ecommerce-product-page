@@ -1,0 +1,64 @@
+# .github/workflows/ci.yaml
+# This workflow defines the Continuous Integration (CI) process for your project.
+
+name: CI Workflow # The name of your workflow, displayed in the GitHub Actions tab.
+
+# Controls when the workflow will run.
+on:
+  # Triggers the workflow on 'push' events to the 'main' branch.
+  # This means every time code is pushed directly to 'main' (or a PR is merged into 'main').
+  push:
+    branches: [ main ] # Indented 2 spaces from 'push'
+
+  # Triggers the workflow on 'pull_request' events targeting the 'main' branch.
+  # This is crucial for pre-merge checks, ensuring code quality before integration.
+  pull_request:
+    branches: [ main ] # Indented 2 spaces from 'pull_request'
+
+  # Allows you to run this workflow manually from the GitHub Actions tab.
+  # Useful for testing or re-running failed workflows.
+  workflow_dispatch: # Indented 2 spaces from 'on'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
+jobs: # Top-level element, starts at column 0
+  # Defines a single job named "build-and-lint".
+  build-and-lint: # Indented 2 spaces from 'jobs'
+    # The type of runner (virtual environment) that the job will execute on.
+    # 'ubuntu-latest' provides a fresh Linux environment with necessary tools.
+    runs-on: ubuntu-latest # Indented 2 spaces from 'build-and-lint'
+
+    # Steps represent a sequence of tasks that will be executed as part of this job.
+    steps: # Indented 2 spaces from 'build-and-lint'
+      # Step 1: Checkout repository
+      # Uses the 'actions/checkout' action to clone your repository into the runner's workspace.
+      # This allows your job to access your code.
+      - name: Checkout repository # Indented 2 spaces from 'steps' (hyphen for list item, then 2 spaces for 'name')
+        uses: actions/checkout@v4 # Indented 2 spaces from 'name'
+
+      # Step 2: Set up Node.js environment
+      # Uses the 'actions/setup-node' action to configure the Node.js environment.
+      # We specify Node.js version 18, which is a common and compatible version for Vite React apps.
+      # 'cache: npm' caches npm dependencies, significantly speeding up subsequent runs.
+      - name: Set up Node.js # Indented 2 spaces from 'steps'
+        uses: actions/setup-node@v4 # Indented 2 spaces from 'name'
+        with: # Indented 2 spaces from 'uses'
+          node-version: '18' # Indented 2 spaces from 'with'
+          cache: 'npm' # Indented 2 spaces from 'with'
+
+      # Step 3: Install project dependencies
+      # Executes the 'npm install' command to download and install all project dependencies.
+      - name: Install dependencies # Indented 2 spaces from 'steps'
+        run: npm install # Indented 2 spaces from 'name'
+
+      # Step 4: Run ESLint
+      # Executes the 'npm run lint' script defined in your package.json.
+      # This step checks for code style issues and potential errors, ensuring code quality.
+      - name: Run ESLint # Indented 2 spaces from 'steps'
+        run: npm run lint # Indented 2 spaces from 'name'
+
+      # Step 5: Build project
+      # Executes the 'npm run build' script defined in your package.json.
+      # This step compiles your React project for production, verifying that it can be successfully built
+      # and catches any build-time errors.
+      - name: Build project # Indented 2 spaces from 'steps'
+        run: npm run build # Indented 2 spaces from 'name'
