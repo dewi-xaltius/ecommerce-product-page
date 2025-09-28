@@ -7,7 +7,7 @@ const product = {
   imageUrl: 'https://placehold.co/400x500/E0F2F7/2C3E50?text=Book+Cover', // Placeholder image URL
   title: 'The Great Software Workflow Guide',
   description: 'A comprehensive guide to mastering efficient software development workflows, including version control, GitHub, build images, and RESTful API design. Learn best practices for modern software engineering.',
-  price: 29.99,
+  price: 30.99,
   currency: '$',
   stock: 10,
 };
