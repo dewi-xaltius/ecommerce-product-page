@@ -1,156 +1,17 @@
-/* src/App.css */
-
-/* Styles specific to the ProductPage component container */
-.product-page-container {
-  background-color: #ffffff; /* White background for the product card */
-  border-radius: 8px; /* Rounded corners for the card */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
-  overflow: hidden; /* Ensures child elements respect rounded corners */
-  max-width: 960px; /* Maximum width for the product card on larger screens */
-  width: 100%; /* Occupy full width up to max-width */
-  display: flex;
-  flex-direction: column; /* Stack sections vertically on small screens (mobile-first) */
-}
-
-/* Media query for medium screens and larger (e.g., tablets, desktops) */
-@media (min-width: 768px) {
-  .product-page-container {
-    flex-direction: row; /* Layout sections horizontally on wider screens */
-  }
-  .image-section {
-    width: 50%; /* Image section takes half width */
-  }
-  .info-section {
-    width: 50%; /* Info section takes half width */
-  }
-}
-
-/* Styles for the product image section */
-.image-section {
-  padding: 24px; /* Internal padding */
-  display: flex;
-  justify-content: center; /* Center image horizontally */
-  align-items: center; /* Center image vertically */
-  background-color: #f9fafb; /* Light background for the image area */
-}
-
-/* Styles for the product image itself */
-.product-image {
-  width: 100%; /* Image takes full width of its container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensures image covers its area without distortion */
-  border-radius: 6px; /* Rounded corners for the image */
-  max-height: 384px; /* Maximum height on smaller screens */
-}
-
-@media (min-width: 768px) {
-  .product-image {
-    max-height: 100%;
-  }
-}
-
-/* Styles for the product information section */
-.info-section {
-  padding: 32px; /* Internal padding */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Styles for the product title */
-.product-title {
-  font-size: 36px; /* Large font size */
-  font-weight: 700; /* Bold */
-  color: #1f2937; /* Dark gray */
-  margin-bottom: 16px; /* Space below */
-}
-
-/* Styles for the product description */
-.product-description {
-  color: #374151; /* Medium gray */
-  font-size: 18px; /* Standard text size */
-  line-height: 1.625; /* Good line spacing */
-  margin-bottom: 24px; /* Space below */
-}
-
-/* Container for price and stock indicator */
-.price-stock-container {
-  display: flex;
-  align-items: baseline; /* Align price and stock text on the same baseline */
-  margin-bottom: 16px; /* Space below */
-}
-
-/* Styles for the product price */
-.product-price {
-  font-size: 48px; /* Very large font size for emphasis */
-  font-weight: 800; /* Extra bold */
-  color: #2563eb; /* Blue color */
-}
-
-/* Styles for the stock indicator text */
-.stock-indicator {
-  margin-left: 16px; /* Space between price and indicator */
-  font-weight: 500; /* Medium font weight */
-  font-size: 18px; /* Standard text size */
-}
-
-/* Specific colors for stock status */
-.in-stock {
-  color: #16a34a; /* Green for 'In Stock' */
-}
-
-.out-of-stock {
-  color: #dc2626; /* Red for 'Out of Stock' */
-}
-
-/* Styles for the quantity selector placeholder section */
-.quantity-placeholder-section {
-  margin-top: 24px; /* Space above */
-}
-
-.quantity-placeholder-text {
-  color: #4b5563; /* Gray color */
-  margin-bottom: 8px; /* Space below */
-}
-
-/* Styles for the Add to Cart button */
-.add-to-cart-button {
-  width: 100%; /* Full width button */
-  background-color: #2563eb; /* Blue button background */
-  color: #ffffff; /* White text */
-  padding: 12px 24px; /* Internal padding */
-  border-radius: 6px; /* Rounded corners */
-  transition-property: background-color; /* Smooth transition for hover effect */
-  transition-duration: 300ms;
-  transition-timing-function: ease-in-out;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Button shadow */
-  border: none; /* Remove default button border */
-  cursor: pointer; /* Indicate clickable element */
-}
-
-.add-to-cart-button:hover {
-
-  background-color: #12ce44; /* Darker blue on hover */
-
-}
-
+/* src/App.css (Add these new styles to the end of the file) */
 .read-more-toggle-button {
-  background: none;
-  border: none;
-
-  color: #eb25a9; /* change to pink color */
-
-  
-
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  margin-left: 8px; /* Space between text and button */
-  padding: 0;
-  text-decoration: underline;
-  transition: color 0.2s ease-in-out;
+    background: none;
+    border: none;
+    color: #2563eb; /* Blue color */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8px; /* Space between text and button */
+    padding: 0;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
 }
 
 .read-more-toggle-button:hover {
-  color: #1d4ed8; /* Darker blue on hover */
+    color: #1d4ed8; /* Darker blue on hover */
 }
