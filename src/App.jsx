@@ -5,8 +5,10 @@ function App() {
   
   return (
     <>
+    <div>
+      <h1>ABC SHOP</h1>
       <ProductPage />
-      
+    </div>
     </>
   )
 }
