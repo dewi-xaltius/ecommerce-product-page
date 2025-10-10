@@ -7,10 +7,7 @@ const product = {
     imageUrl: 'https://placehold.co/400x500/E0F2F7/2C3E50?text=Book+Cover',
     // Placeholder image URL
     title: 'The Great Software Workflow Guide',
-    description: 'A comprehensive guide to mastering efficient software
-    development workflows, including version control, GitHub, build images,
-    and RESTful API design. Learn best practices for modern software
-    engineering.',
+    description: 'A comprehensive guide to mastering efficient software development workflows, including version control, GitHub, build images, and RESTful API design. Learn best practices for modern software engineering.',
     price: 29.99,
     currency: '$',
     stock: 10,
@@ -45,33 +42,33 @@ function ProductInfo({ product }) {
         <div>
             <h1 className="product-title">{product.title}</h1>
 
-<p className="product-description">
-    {/* Conditionally render full or short description */}
-    {isExpanded || !needsToggle ? product.description :
-    shortDescription}
-    {/* Render toggle button only if description is long */}
-    {needsToggle && (
-        <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="read-more-toggle-button"
-        >
-            {isExpanded ? 'Read Less' : 'Read More'}
-        </button>
-    )}
-</p>
-<div className="price-stock-container">
-    <span className="product-price">
-        {product.currency} {product.price.toFixed(2)}
-    </span>
-    {product.stock > 0 ? (
-        <span className="stock-indicator in-stock">In Stock</span>
-    ) : (
-        <span className="stock-indicator out-of-stock">Out of
-        Stock</span>
-    )}
-</div>
-</div>
-);
+            <p className="product-description">
+                {/* Conditionally render full or short description */}
+                {isExpanded || !needsToggle ? product.description :
+                shortDescription}
+                {/* Render toggle button only if description is long */}
+                {needsToggle && (
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="read-more-toggle-button"
+                    >
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                    </button>
+                )}
+            </p>
+            <div className="price-stock-container">
+                <span className="product-price">
+                    {product.currency} {product.price.toFixed(2)}
+                </span>
+                {product.stock > 0 ? (
+                    <span className="stock-indicator in-stock">In Stock</span>
+                ) : (
+                    <span className="stock-indicator out-of-stock">Out of
+                    Stock</span>
+                )}
+            </div>
+        </div>
+    );
 }
 
 // Main ProductPage component (rest of this file is unchanged)
@@ -92,12 +89,11 @@ function ProductPage() {
                     for Quantity Selector]</p>
                     <button className="add-to-cart-button">
                     Add to Cart
-
-</button>
-</div>
-</div>
-</div>
-);
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default ProductPage;
