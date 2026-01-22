@@ -39,7 +39,7 @@ jobs: # Top-level element, starts at column 0
       # Uses the 'actions/setup-node' action to configure the Node.js environment.
       # We specify Node.js version 18, which is a common and compatible version for Vite React apps.
       # 'cache: npm' caches npm dependencies, significantly speeding up subsequent runs.
-      - name: Set up Node.js environment # Indented 2 spaces from 'steps'
+      - name: Set up Node.js # Indented 2 spaces from 'steps'
         uses: actions/setup-node@v4 # Indented 2 spaces from 'name'
         with: # Indented 2 spaces from 'uses'
           node-version: '18' # Indented 2 spaces from 'with'
